@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>airSlate - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.min.css">
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <main class="page">
+        <div class="hero"><img class="hero__img" src="../img/sprite.svg#svg--logo--airSlate" alt="airSlate logo" width="150" height="48">
+          <div class="hero__container container">
+            <form class="hero__form form" id="form" method="post" action="#" name="form" autocomplete="off">
+              <div class="form__items">
+                <h1 class="form__title">Log in to airSlate</h1>
+                <div class="form__item">
+                  <label class="form__label" for="formMail">Email address</label>
+                  <input class="form__input" id="formMail" type="text" name="Email address" placeholder="Enter email" autocomplete="off">
+                </div>
+                <div class="form__item">
+                  <label class="form__label" for="formPassword">Password</label>
+                  <input class="form__input" id="formPassword" type="password" name="Password" placeholder="Enter password" autocomplete="off">
+                </div>
+                <p class="form__description">
+                  By clicking Log in, you agree to the
+                  <a class="form__link-terms" href="https://www.airslate.com/terms-of-service" target="_blank">Terms of Services</a>
+                  <span class="form__text">and</span>
+                  <a class="form__link-privacy" href="https://www.airslate.com/privacy-policy" target="_blank">Privacy Policy,</a>
+                  <span class="form__text">including receipt of emails from of us about our service.</span>
+                </p>
+                <button class="form__btn" type="submit">Log in</button>
+              </div>
+              <div class="form__items">
+                <div class="form__social-item">
+                  <p class="form__social-description">or continue with your social accounts</p>
+                  <hr class="form__social-decor">
+                </div>
+                <div class="form__social-icons"><a class="form__social-link" href="https://www.facebook.com/"><img class="form__social-img" src="../img/sprite.svg#svg--facebook-icon" alt="Facebook" width="24" height="24"><span class="form__social-text">Facebook</span></a><a class="form__social-link" href="https://www.google.com/account/about/"><img class="form__social-img" src="../img/sprite.svg#svg--google-icon" alt="Google" width="24" height="24"><span class="form__social-text">Google</span></a><a class="form__social-link" href="https://appleid.apple.com/"><img class="form__social-img" src="../img/sprite.svg#svg--apple-icon" alt="Apple" width="24" height="24"><span class="form__social-text">Apple</span></a></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="../scripts/main.js"></script>
+  </body>
+</html>
