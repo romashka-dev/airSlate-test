@@ -1,0 +1,346 @@
+// VARIABLES ==============================================================================================================================================================================================
+
+// Основные цвета
+@trolleyGray__800: #414141; // Цвет шрифта - тайтл
+@trolleyGray__700: #565656; // Цвет шрифта - дескрипшн
+@trolleyGray__500: #808080; // Цвет шрифта - текст дополнительный
+@trolleyGray__400: #959595; // Цвет шрифта - инпут
+@trolleyGray__300: #AAAAAA; // Border
+@trolleyGray__100: #D4D4D4; // Devider
+
+@basicColors__500: #ffffff; // Цвет шрифта - белый
+
+@link__normal: #45688F; // Цвет ссылки, normal
+@link__hover: #6683A3; // Цвет ссылки, hover
+
+@btn__normal: #FF9000; // Цвет кнопки
+@btn__hover: #FFA42E; // Цвет кнопки при ховере
+
+@validation: #E15554; // Цвет для валидации
+
+@cobaltBg: #2E3DBE; // body
+
+// Шрифт по умолчанию
+@fontFamily: 'Open Sans', sans-serif;
+@fontSize: 14px; // где 14(px) - размер шрифта по умолчанию из макета
+@fontWeight: 600;
+@lineHeight: 24px;
+
+// Брейк-поинты
+@breakpoint1024: 1023.98px;
+@breakpoint768: 767.98px;
+@breakpoint480: 479.98px;
+
+
+// Обнуление и общие параметры ============================================================================================================================================================================================== =============================================================================================== ===============================================================================================
+* {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+:focus,
+:active {
+	// outline: none;
+}
+a:focus,
+a:active {
+	// outline: none;
+}
+html,
+body {
+	height: 100%;
+	min-width: 320px;
+}
+body {
+	background-color: @cobaltBg;
+	color: @trolleyGray__800;
+	line-height: 1;
+	font-family: @fontFamily;
+	font-size: @fontSize;
+	//text-rendering: optimizeLegibility;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+input,
+button,
+textarea {
+	font-family: @fontFamily;
+	font-size: inherit;
+}
+button {
+	cursor: pointer;
+	color: inherit;
+	background-color: inherit;
+}
+a {
+	color: inherit;
+}
+a:link,
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+ul li {
+	list-style: none;
+}
+img {
+	vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+
+
+// SETTINGS ==============================================================================================================================================================================================
+// Ограничивающий контейнер
+/*
+(i) Стили будут применяться ко
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+*/
+.container {
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media (min-width: @breakpoint480) {
+    padding: 0 40px;
+  }
+
+  @media (min-width: @breakpoint768) {
+    padding: 0 60px;
+  }
+}
+
+// Оболочка
+.wrapper {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+// Validation
+.just-validate-error-label {
+	font-family: @fontFamily !important;
+	font-size: 12px !important;
+	font-weight: @fontWeight !important;
+	line-height: 16px !important;
+	color: @validation !important;
+}
+
+.just-validate-error-field {
+	border: 1px solid @validation !important;
+}
+
+
+// HERO section ======================================================================================================================================================================================================================
+.hero {
+	padding: 36px 0 36px;
+
+	&__img {
+		width: 100%;
+    margin-bottom: 48px;
+
+		@media (min-width: @breakpoint768) {
+			margin-bottom: 60px;
+		}
+	}
+
+	.form {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		background-color: @basicColors__500;
+		min-height: 502px;
+		max-width: 552px;
+		margin: 0 auto;
+		padding: 30px;
+		box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.1);
+		border-radius: 8px;
+
+		@media (min-width: @breakpoint480) {
+			gap: 20px;
+			padding: 48px;
+		}
+
+		&__items {
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+
+			@media (min-width: @breakpoint480) {
+				gap: 20px;
+			}
+		}
+
+		&__title {
+			font-size: 24px;
+			font-weight: 700;
+			line-height: 32px;
+			color: @trolleyGray__800;
+		}
+
+		&__item {
+			display: flex;
+    	flex-direction: column;
+		}
+
+		&__label {
+			font-size: @fontSize;
+			font-weight: 700;
+			line-height: @lineHeight;
+			color: @trolleyGray__800;
+			margin-bottom: 4px;
+		}
+
+		&__input {
+			width: 100%;
+			height: 32px;
+			padding: 8px;
+			margin-bottom: 4px;
+			border: 1px solid @trolleyGray__300;
+			border-radius: 4px;
+
+			&:hover,
+			&:focus {
+				border: 1px solid @trolleyGray__500;
+			}
+
+			&::placeholder {
+				font-size: 14px;
+				font-weight: 400;
+				line-height: 16px;
+				color: @trolleyGray__400;
+			}
+		}
+
+		&__description {
+			font-size: 12px;
+			font-weight: 400;
+			line-height: 16px;
+			color: @trolleyGray__700;
+
+			> a {
+				font-weight: @fontWeight;
+				line-height: 14px;
+				color: @link__normal;
+				text-decoration: underline;
+				transition: all 0.3s;
+
+				&:hover,
+				&:focus {
+					color: @link__hover;
+					opacity: 1;
+				}
+			}
+		}
+
+		&__btn {
+			width: 100%;
+			min-height: 40px;
+			border: none;
+			cursor: pointer;
+			background-color: @btn__normal;
+			color: @basicColors__500;
+			font-size: 14px;
+			font-weight: @fontWeight;
+			line-height: 16px;
+			border-radius: 4px;
+			transition: all 0.3s;
+
+			&:hover,
+			&:focus {
+				background-color: @btn__hover;
+				opacity: 1;
+			}
+		}
+
+		&__social-item {
+			position: relative;
+		}
+
+		&__social-description {
+			background-color: @basicColors__500;
+			font-size: 14px;
+			font-weight: @fontWeight;
+			line-height: @lineHeight;
+			color: @trolleyGray__500;
+			text-align: center;
+			max-width: 180px;
+			margin: 0 auto;
+			z-index: 2;
+			position: relative;
+
+			@media (min-width: @breakpoint768) {
+				max-width: 260px;
+			}
+		}
+
+		&__social-decor {
+			background-color: @trolleyGray__100;
+			height: 1px;
+			width: 100%;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translate(0, -50%);
+			display: block;
+			z-index: 1;
+		}
+
+		&__social-icons {
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+
+			@media (min-width: @breakpoint768) {
+				flex-direction: row;
+			}
+		}
+
+		&__social-link {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 8px;
+			width: 100%;
+			padding: 8px 12px;
+    	border: 1px solid @trolleyGray__300;
+			border-radius: 4px;
+			transition: all 0.3s;
+			font-size: @fontSize;
+			font-weight: @fontWeight;
+			line-height: @lineHeight;
+			color: @trolleyGray__800;
+
+			&:hover,
+			&:focus {
+				border: 1px solid @btn__normal;
+				opacity: 1;
+			}
+		}
+
+		&__social-img {
+			object-fit: cover;
+			object-position: left;
+		}
+	}
+}
