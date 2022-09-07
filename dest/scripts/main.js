@@ -1,7 +1,9 @@
 "use strict";
 
 // Валидация для полей формы
-var validate = new window.JustValidate('#form');
+var validate = new window.JustValidate('#form', {
+  errorFieldCssClass: 'is-invalid'
+});
 validate.addField('#formMail', [{
   rule: 'required',
   errorMessage: 'The field is required'
@@ -22,4 +24,7 @@ validate.addField('#formMail', [{
   rule: 'minLength',
   value: 8,
   errorMessage: 'The field must contain a minimum of 3 characters'
-}]);
+}]).onSuccess(function (event) {
+  alert('Validation passes and form submitted', event);
+  window.location.reload(event);
+});
