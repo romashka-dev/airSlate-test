@@ -1,0 +1,60 @@
+doctype html
+html(lang="en")
+
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+		title airSlate - Login
+		link(href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet")
+		link(rel="stylesheet", href="styles/main.min.css")
+		script(src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js")
+
+	body
+
+		.wrapper
+			main.page
+
+				.hero
+					img.hero__img(src="../img/sprite.svg#svg--logo--airSlate" alt="airSlate logo" width="150" height="48")
+					.hero__container.container
+						form.hero__form.form#form(method="post" action="#" name="form" autocomplete="off")
+							.form__items
+								h1.form__title Log in to airSlate
+								.form__item
+									label.form__label(for="formMail") Email address
+									input.form__input#formMail(type="text" name="Email address" placeholder="Enter email" autocomplete="off")
+								.form__item
+									label.form__label(for="formPassword") Password
+									input.form__input#formPassword(type="password" name="Password" placeholder="Enter password" autocomplete="off")
+								p.form__description By clicking Log in, you agree to the
+									|
+									|
+									a.form__link-terms(href="https://www.airslate.com/terms-of-service" target="_blank") Terms of Services
+									|
+									|
+									span.form__text and
+									|
+									|
+									a.form__link-privacy(href="https://www.airslate.com/privacy-policy" target="_blank") Privacy Policy,
+									|
+									|
+									span.form__text including receipt of emails from of us about our service.
+								button.form__btn(type="submit") Log in
+							.form__items
+								.form__social-item
+									p.form__social-description or continue with your social accounts
+									hr.form__social-decor
+								.form__social-icons
+									a.form__social-link(href="https://www.facebook.com/")
+										img.form__social-img(src="../img/sprite.svg#svg--facebook-icon" alt="Facebook" width="24" height="24")
+										span.form__social-text Facebook
+									a.form__social-link(href="https://www.google.com/account/about/")
+										img.form__social-img(src="../img/sprite.svg#svg--google-icon" alt="Google" width="24" height="24")
+										span.form__social-text Google
+									a.form__social-link(href="https://appleid.apple.com/")
+										img.form__social-img(src="../img/sprite.svg#svg--apple-icon" alt="Apple" width="24" height="24")
+										span.form__social-text Apple
+
+		//- script(src="js/jquery.min.js")
+		script(src="../scripts/main.js")
