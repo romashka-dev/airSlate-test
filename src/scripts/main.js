@@ -1,5 +1,7 @@
 // Валидация для полей формы
-const validate = new window.JustValidate('#form');
+const validate = new window.JustValidate('#form', {
+  errorFieldCssClass: 'is-invalid',
+});
 
 validate
 	.addField('#formMail', [
@@ -32,3 +34,8 @@ validate
 			errorMessage: 'The field must contain a minimum of 3 characters',
     },
 	])
+
+	.onSuccess((event) => {
+		alert('Validation passes and form submitted', event);
+		window.location.reload(event);
+	});
